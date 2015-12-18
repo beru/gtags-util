@@ -31,6 +31,19 @@ namespace gtags_util
 			init_server();
 		}
 
+        protected override void OnLoad(EventArgs e)
+        {
+            Opacity = 0;
+            base.OnLoad(e);
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            Visible = false;
+            Opacity = 100;
+            base.OnShown(e);
+        }
+
 		//メニュー処理
 		private void exitMenuItem_Click(object sender, EventArgs e)
 		{
@@ -321,6 +334,6 @@ namespace gtags_util
 				l++;
 			}
 			return l;
-		}
+        }
 	}
 }
